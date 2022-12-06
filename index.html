@@ -12,14 +12,23 @@
 
   <div class="profile-images-card">
     <div class="profile-images">
-      <img src="assets/img/perfil.png" alt="">
+      <img src="assets/img/perfil.png" alt="upload-img">
     </div>
     <div class="custom-file">
       <label for="fileupload">Cargar Archivo Aqui</label>
-      <input type="file" name="" id="">
+      <input type="file" id="fileupload">
     </div>
   </div>
 
-  <script src="assets/js/"></script>
+  <script src="assets/js/jquery-latest.min.js"></script>
+  <script>
+    $(function(){
+		$("#fileupload").change(function(event) {
+			var x = URL.createObjectURL(event.target.files[0]);
+			$("#upload-img").attr("src",x);
+			console.log(event);
+		});
+	})
+  </script>
 </body>
 </html>
